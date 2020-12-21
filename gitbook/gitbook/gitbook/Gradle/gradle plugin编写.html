@@ -1,0 +1,686 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>gradle plugin编写 · Blankj's Glory</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Blankj">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="maven-publish插件.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/yuanwenbing" target="_blank" class="custom-link">我的我的</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../EMPTY.html">
+            
+                <a href="../EMPTY.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android/activity-alias.html">
+            
+                <a href="../Android/activity-alias.html">
+            
+                    
+                    activity-alias
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android/ColorStateList.html">
+            
+                <a href="../Android/ColorStateList.html">
+            
+                    
+                    ColorStateList
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../EMPTY.html">
+            
+                <a href="../EMPTY.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Git/Git常用操作.html">
+            
+                <a href="../Git/Git常用操作.html">
+            
+                    
+                    Git常用操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../EMPTY.html">
+            
+                <a href="../EMPTY.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Tools/Hexo-Github-搭建博客.html">
+            
+                <a href="../Tools/Hexo-Github-搭建博客.html">
+            
+                    
+                    Hexo-Github-搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../EMPTY.html">
+            
+                <a href="../EMPTY.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Node/Brew安装Node的某个版本.html">
+            
+                <a href="../Node/Brew安装Node的某个版本.html">
+            
+                    
+                    Brew安装Node的某个版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../EMPTY.html">
+            
+                <a href="../EMPTY.html">
+            
+                    
+                    Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="maven-publish插件.html">
+            
+                <a href="maven-publish插件.html">
+            
+                    
+                    maven-publish插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.2" data-path="gradle plugin编写.html">
+            
+                <a href="gradle plugin编写.html">
+            
+                    
+                    gradle plugin编写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Other
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >gradle plugin编写</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x63D2;&#x4EF6;&#x7F16;&#x5199;&#x53EF;&#x4EE5;&#x5728;&#x4E09;&#x4E2A;&#x5730;&#x65B9;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;</p>
+<p>1.&#x5728; build.gradle &#x4E2D;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-groovy"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ScriptPlugin</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Plugin</span>&lt;<span class="hljs-title">Project</span>&gt;{</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">void</span> apply(Project target) {
+        <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;</span>
+        target.task(<span class="hljs-string">&apos;script0&apos;</span>, <span class="hljs-string">group:</span> <span class="hljs-string">&apos;script&apos;</span>) {
+            doLast {
+                println <span class="hljs-string">&apos;&gt;&gt;&gt; script plugin doLast call&apos;</span>
+            }
+        }
+    }
+}
+
+apply <span class="hljs-string">plugin:</span>ScriptPlugin
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x6267;&#x884C;<code>./gradlew script0</code></p>
+<pre><code>&gt; Task :app:script0
+&gt;&gt;&gt; script plugin doLast call
+</code></pre><p>2.&#x5728;&#x9879;&#x76EE;&#x7684;buildSrc&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x91CC;&#x77E5;&#x9053;&#x5C31;&#x884C;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x9762;&#x5199;&#x3002;</p>
+<p>3.&#x5728;&#x72EC;&#x7ACB;&#x7684;&#x9879;&#x76EE;&#x4E0A;&#x7F16;&#x5199;&#xFF0C;&#x5E76;&#x4E0A;&#x4F20;&#x5230;maven&#x4ED3;&#x5E93;&#xFF0C;&#x901A;&#x8FC7;&#x4F9D;&#x8D56;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6700;&#x5E38;&#x89C1;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x5F97;&#x6700;&#x591A;&#xFF0C;&#x6700;&#x65B9;&#x4FBF;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;IntelliIdea ide &#x6765;&#x521B;&#x5EFA;&#x3002;</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJETtH.png" alt="image-20201217144141654"></p>
+<p>&#x70B9;&#x51FB;Next</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJVEuV.png" alt="image-20201217144254049"></p>
+<p>&#x8FD9;&#x91CC;&#x968F;&#x4FBF;&#x8D77;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x70B9;&#x51FB;finish&#x540E;&#xFF0C;&#x7B49;&#x5F85;&#x9879;&#x76EE;&#x521B;&#x5EFA;</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJVU4H.png" alt="image-20201217144417225"></p>
+<p>&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5728;<code>groovy</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJVcVS.png" alt="image-20201217144531762"></p>
+<p>&#x5728;<code>build.gradle</code>&#x6587;&#x4EF6;&#x4E2D;&#x628A;gradle sdk&#x4F9D;&#x8D56;&#x8FDB;&#x6765;&#xFF0C;&#x4FEE;&#x6539;<code>dependences</code>&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x672C;&#x5730;groovy&#xFF0C;&#x3002;</p>
+<pre><code>dependencies {
+//compile &apos;org.codehaus.groovy:groovy-all:2.3.11&apos;
+
+compile localGroovy()
+
+    testCompile group: &apos;junit&apos;, name: &apos;junit&apos;, version: &apos;4.12&apos;
+    implementation gradleApi()
+}
+</code></pre><p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;groovy class&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x8D77;&#x540D;&#x4E3A;<code>plugin0</code>&#xFF0C;&#x8BA9;&#x5B83;&#x5B9E;&#x73B0;Plugin&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x91CC;&#x6CDB;&#x578B;&#x5B9A;&#x4E49;<code>Project</code>&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x7B80;&#x5355;&#x6253;&#x5370;&#x4E00;&#x53E5;&#x8BDD;<code>plugin0 apply method called.</code>,&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x90A3;&#x8981;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x5462;&#xFF1F;</p>
+<pre><code class="lang-groovy"><span class="hljs-keyword">package</span> com.test.gradle.plugin
+
+<span class="hljs-keyword">import</span> org.gradle.api.Plugin
+<span class="hljs-keyword">import</span> org.gradle.api.Project
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Plugin0</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Plugin</span>&lt;<span class="hljs-title">Project</span>&gt;{</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">void</span> apply(Project project) {
+        print <span class="hljs-string">&quot;plugin0 apply method called.&quot;</span>
+    }
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x5728;resource&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x65B0;&#x5EFA;META-INF&#x76EE;&#x5F55;&#xFF0C;&#x518D;&#x5EFA;&#x7ACB;gradle-plugins&#x5B50;&#x76EE;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x5305;&#x540D;&#x53CA;&#x63D2;&#x4EF6;&#x540D;&#x521B;&#x5EFA;properties&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x5165;<code>implementation-class=com.test.gradle.plugin.Plugin0</code></p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJVbaF.png" alt="image-20201217145705377"></p>
+<p>&#x5B8C;&#x6210;&#x8FD9;&#x6B65;&#x4EE5;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x63D2;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x5148;&#x4E0A;&#x4F20;&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#xFF0C;&#x7B80;&#x5355;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-groovy">plugins {
+    id <span class="hljs-string">&apos;groovy&apos;</span>
+    id <span class="hljs-string">&apos;maven-publish&apos;</span>
+}
+
+publishing {
+    publications {
+        Production(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+group <span class="hljs-string">&apos;org.test.plugins&apos;</span>
+version <span class="hljs-string">&apos;1.0&apos;</span>
+</code></pre>
+<p>&#x540C;&#x6B65;gradle&#x540E;&#xFF0C;&#x4F1A;&#x53D1;&#x53F3;&#x4FA7;gradle&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x53D1;&#x5E03;task</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJZPaD.png" alt="image-20201217150418665"></p>
+<p>&#x53CC;&#x51FB;<code>publishToMavenLocal</code>task&#x540E;</p>
+<pre><code>3:05:35 PM: Executing task &apos;publishToMavenLocal&apos;...
+
+&gt; Task :compileJava NO-SOURCE
+&gt; Task :compileGroovy
+&gt; Task :processResources
+&gt; Task :classes
+&gt; Task :jar
+&gt; Task :generateMetadataFileForProductionPublication
+&gt; Task :generatePomFileForProductionPublication
+&gt; Task :publishProductionPublicationToMavenLocal
+&gt; Task :publishToMavenLocal
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use &apos;--warning-mode all&apos; to show the individual deprecation warnings.
+See https://docs.gradle.org/6.7/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+6 actionable tasks: 6 executed
+3:05:36 PM: Task execution finished &apos;publishToMavenLocal&apos;.
+</code></pre><p>&#x4EE3;&#x8868;&#x53D1;&#x5E03;&#x6210;&#x529F;&#xFF0C;&#x4E3A;&#x9A8C;&#x8BC1;&#xFF0C;&#x6211;&#x4EEC;&#x8FDB;&#x5165;&#x5230;&#x9ED8;&#x8BA4;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x770B;&#x4E00;&#x4E0B;&#x3002;</p>
+<p><img src="https://s3.ax1x.com/2020/12/18/rJZERA.png" alt="image-20201217151040253"></p>
+<p>&#x5269;&#x4E0B;&#x7684;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x3002;</p>
+<p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Android&#x9879;&#x76EE;&#xFF0C;&#x5728;project&#x7684;build.gradle&#x4E2D;&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x7684;&#x5F15;&#x7528;</p>
+<pre><code class="lang-groovy"><span class="hljs-comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span>
+buildscript {
+    repositories {
+        maven { url <span class="hljs-string">&apos;/Users/wenbing/.m2/repository/&apos;</span> }
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath <span class="hljs-string">&quot;com.android.tools.build:gradle:4.1.1&quot;</span>
+        classpath <span class="hljs-string">&apos;org.test.plugins:untitled2:1.0&apos;</span>
+
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Do not place your application dependencies here; they belong</span>
+        <span class="hljs-comment">// in the individual module build.gradle files</span>
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url <span class="hljs-string">&apos;/Users/wenbing/.m2/repository&apos;</span> }
+        google()
+        jcenter()
+    }
+}
+
+task clean(<span class="hljs-string">type:</span> Delete) {
+    delete rootProject.buildDir
+}
+</code></pre>
+<p>&#x5728;module&#x7684;build.gradle&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x63D2;&#x4EF6;id&#xFF0C;``</p>
+<pre><code class="lang-groovy">plugins {
+    id <span class="hljs-string">&apos;com.android.application&apos;</span>
+    id <span class="hljs-string">&apos;com.test.gradle.plugin.Plugin0&apos;</span>
+}
+</code></pre>
+<p>&#x540C;&#x6B65;gradle&#x540E;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x63D2;&#x4EF6;&#x88AB;&#x8C03;&#x7528;&#x4E86;</p>
+<pre><code>
+&gt; Configure project :app
+plugin0 apply method called.
+&gt; Task :prepareKotlinBuildScriptModel UP-TO-DATE
+
+BUILD SUCCESSFUL in 1s
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="maven-publish插件.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: maven-publish插件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"gradle plugin编写","level":"1.11.2","depth":2,"next":{"title":"Other","level":"1.12","depth":1,"ref":"","articles":[]},"previous":{"title":"maven-publish插件","level":"1.11.1","depth":2,"path":"Gradle/maven-publish插件.md","ref":"Gradle/maven-publish插件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yuanwenbing"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blankj's Glory","language":"zh-hans","links":{"sidebar":{"我的我的":"https://github.com/yuanwenbing"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"Gradle/gradle plugin编写.md","mtime":"2020-12-18T02:49:15.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-18T02:56:20.501Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
